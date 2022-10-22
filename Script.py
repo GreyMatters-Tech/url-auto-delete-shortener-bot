@@ -27,7 +27,7 @@ class script(object):
 » Contact Me @GreyMatter_Owner<b>"""
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
-- Filter is the feature were users can set automated replies for a particular keyword and ᎯℕUℛᎯᎶ will respond whenever a keyword is found the message
+- Filter is the feature were users can set automated replies for a particular keyword and Search Bot will respond whenever a keyword is found the message
 
 <b>NOTE:</b>
 1. Search Bot should have admin privillage.
