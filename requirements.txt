@@ -1,0 +1,13 @@
+pyrogram>=2.0.59
+tgcrypto
+pymongo[srv]==4.3.2
+motor==3.0.0
+marshmallow==3.18.0
+umongo==3.1.0
+requests
+bs4
+imdbpy==2022.7.9
+heroku3
+pynewtonmath
+pytz
+aiohttp
