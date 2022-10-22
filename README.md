@@ -13,7 +13,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/AM-ROBOTS/AdvAnurag/blob/main/assets/logo.jpg" alt="Anurag Logo">
+  <img src="https://github.com/GreyMattersBot/url-auto-delete-shortener-bot/blob/main/assets/IMG_20220105_010453-removebg-preview.png" alt="GreyMatter's Bot Logo">
 </p>
 <h1 align="center">
   <b>GreyMatter's Bot</b>
