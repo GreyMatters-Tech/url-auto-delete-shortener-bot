@@ -66,8 +66,6 @@ LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
 
 ## EXTRA FEATURES ##
     
-<i>Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ sᴇᴇ ᴛʜᴇ ᴍᴀɢɪᴄ ᴏʀ ʀᴇᴀᴅ ᴍᴏʀᴇ ғʀᴏᴍ ᴛʜᴇ ᴍᴇɴᴜ ʙᴇʟᴏᴡ</i>')
-
       # URL Shortener #
 
 URL_SHORTENR_WEBSITE = environ.get('URL_SHORTENR_WEBSITE', 'beingtek.com')
