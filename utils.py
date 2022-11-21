@@ -382,7 +382,7 @@ async def get_shortlink(link):
     if "http" == https:
         https = "https"
         link = link.replace("http", https)
-    url = f'https://ClicksFly.com/api'
+    url = f'https://atglinks.com/api'
     params = {'api': URL_SHORTNER_WEBSITE_API,
               'url': link,
               }
