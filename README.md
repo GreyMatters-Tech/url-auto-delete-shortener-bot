@@ -4,7 +4,6 @@
 - ⟴ Self Delete Added (Auto delete)
 - ⟴ Filter On Off Option Added
 - ⟴ Custom Welcome Message
-- ⟴ URL Shortener Added
 - ⟴ Custom Download Name And URL
 - ⟴ Custom Texts (About, Help, Stats,More..)
 - ⟴ Custom URL Buttons (Updates channel, Add To Group, Force Sub, More...)
