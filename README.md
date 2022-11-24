@@ -40,7 +40,7 @@
 - [x] File Store
 ## Variables
 
-Read [this](https://telegram.dog/sources_cods) before you start messing up with your edits.
+Read [this](https://telegram.dog/GreyMatter_Bots) before you start messing up with your edits.
 
 ### Required Variables
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
@@ -54,7 +54,7 @@ Read [this](https://telegram.dog/sources_cods) before you start messing up with 
 ### Optional Variables
 * `PICS`: Telegraph links of images to show in start message.( Multiple images can be used separated by space )
 * `FILE_STORE_CHANNEL`: Channel from were file store links of posts should be made.Separate multiple IDs by space
-* Check [info.py](https://github.com/AM-ROBOTS/AdvAnurag/blob/main/info.py) for more
+* Check [info.py](https://github.com/GreyMattersBot/url-auto-delete-shortener-bot/blob/main/info.py) for more
 ## EXTRA FEATURES
 * `URL_SHORTENR_WEBSITE`: URL Shortener Website Link ( Without https://)
 * `URL_SHORTNER_WEBSITE_API`: URL Shortener Website API key
@@ -124,10 +124,6 @@ link - to create link for one post
 ## Support
 [![telegram badge](https://img.shields.io/badge/Telegram-Group-30302f?style=flat&logo=telegram)](https://t.me/greymatters_bots_discussion)
 [![telegram badge](https://img.shields.io/badge/Telegram-Channel-30302f?style=flat&logo=telegram)](https://t.me/greymatter_bots)
-
-## Credits 
-* [![ᎯℕUℛᎯᎶ](https://img.shields.io/static/v1?label=EvaMaria&message=devs&color=critical)](https://telegram.dog/sources_cods)
-
 
 ## Thanks to 
  - Thanks To Dan For His Awesome [Library](https://github.com/pyrogram/pyrogram)
