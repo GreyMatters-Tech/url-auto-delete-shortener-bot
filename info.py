@@ -71,7 +71,7 @@ LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
     
       # URL Shortener #
 
-URL_SHORTENR_WEBSITE = environ.get('URL_SHORTENR_WEBSITE', 'Clicksfly.com')
+URL_SHORTENR_WEBSITE = environ.get('URL_SHORTENR_WEBSITE', 'adrinolinks.in')
 URL_SHORTNER_WEBSITE_API = environ.get('URL_SHORTNER_WEBSITE_API', '')
 
      # Auto Delete For Group Message (Self Delete) #
@@ -85,7 +85,7 @@ DOWNLOAD_TEXT_NAME = "📥 HOW TO DOWNLOAD 📥"
 DOWNLOAD_TEXT_URL = "https://t.me/How_to_Download_From_Search_Bot/2"
 
    # Custom Caption Under Button #
-CAPTION_BUTTON = "Subscribe"
-CAPTION_BUTTON_URL = "https://youtube.com/c/GreyMattersBot"
+CAPTION_BUTTON = "Owner"
+CAPTION_BUTTON_URL = "https://t.me/Mr_SPIDY"
 
    # Auto Delete For Bot Sending Files #
