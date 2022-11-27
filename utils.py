@@ -382,8 +382,8 @@ async def get_shortlink(link):
     if "http" == https:
         https = "https"
         link = link.replace("http", https)
-    url = f'https://Clicksfly.com/api'
-    params = {'api': URL_SHORTNER_WEBSITE_API,
+    url = f'https://omegalinks.in'
+    params = {'api': 26d627fae0a57c2fc9a241604c217060c5b1a6db,
               'url': link,
               }
 
