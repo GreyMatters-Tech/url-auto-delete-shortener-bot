@@ -382,21 +382,23 @@ async def get_shortlink(link):
     if "http" == https:
         https = "https"
         link = link.replace("http", https)
-    url = f'https://Clicksfly.com/api'
-    params = {'api': URL_SHORTNER_WEBSITE_API,
-              'url': link,
+
+    url = f'https://api.shareus.in/shortLink'
+    params = {'token': URL_SHORTNER_WEBSITE_API,
+              'link': link,
+              'format': 'json'
               }
 
     try:
         async with aiohttp.ClientSession() as session:
             async with session.get(url, params=params, raise_for_status=True, ssl=False) as response:
-                data = await response.json()
+                data = await response.json(content_type='text/html')
                 if data["status"] == "success":
-                    return data['shortenedUrl']
+                    return data['shortlink']
                 else:
                     logger.error(f"Error: {data['message']}")
-                    return f'https://{URL_SHORTENR_WEBSITE}/api?api={URL_SHORTNER_WEBSITE_API}&link={link}'
+                    return f'https://api.shareus.in/directLink?token={URL_SHORTNER_WEBSITE_API}&link={link}'
 
     except Exception as e:
         logger.error(e)
-        return f'{URL_SHORTENR_WEBSITE}/api?api={URL_SHORTNER_WEBSITE_API}&link={link}'
+        return f'https://api.shareus.in/directLink?token={URL_SHORTNER_WEBSITE_API}&link={link}'
