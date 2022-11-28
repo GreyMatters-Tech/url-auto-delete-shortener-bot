@@ -45,15 +45,15 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('𝑨𝒅𝒅 𝑴𝒆 𝒀𝒐𝒖𝒓 𝑮𝒓𝒐𝒖𝒑', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('𝑨𝒅𝒅 𝑴𝒆 𝒀𝒐𝒖𝒓 𝑮𝒓𝒐𝒖𝒑🎙️', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('𝑺𝒆𝒓𝒊𝒆𝒔 𝑼𝒑𝒅𝒂𝒕𝒆𝒔🍃', url='https://t.me/freakers_series'),
             InlineKeyboardButton('𝑴𝒐𝒗𝒊𝒆 𝑼𝒑𝒅𝒂𝒕𝒆𝒔🍃', url='https://t.me/freakersmovie')
             ],[
             InlineKeyboardButton('𝑺𝒆𝒂𝒓𝒄𝒉 𝑭𝒊𝒍𝒆𝒔🔎', switch_inline_query_current_chat='')
             ],[
-            InlineKeyboardButton('𝑯𝒆𝒍𝒑', callback_data='help'),
-            InlineKeyboardButton('𝑨𝒃𝒐𝒖𝒕', callback_data='about')
+            InlineKeyboardButton('𝑯𝒆𝒍𝒑🍃', callback_data='help'),
+            InlineKeyboardButton('𝑨𝒃𝒐𝒖𝒕🍃', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -93,15 +93,15 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('𝑨𝒅𝒅 𝑴𝒆 𝒀𝒐𝒖𝒓 𝑮𝒓𝒐𝒖𝒑', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('𝑨𝒅𝒅 𝑴𝒆 𝒀𝒐𝒖𝒓 𝑮𝒓𝒐𝒖𝒑🎙️', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('𝑺𝒆𝒓𝒊𝒆𝒔 𝑼𝒑𝒅𝒂𝒕𝒆𝒔🍃', url='https://t.me/freakers_series'),
             InlineKeyboardButton('𝑴𝒐𝒗𝒊𝒆 𝑼𝒑𝒅𝒂𝒕𝒆𝒔🍃', url='https://t.me/freakersmovie')
             ],[
             InlineKeyboardButton('𝑺𝒆𝒂𝒓𝒄𝒉 𝑭𝒊𝒍𝒆𝒔🔎', switch_inline_query_current_chat='')
             ],[
-            InlineKeyboardButton('𝑯𝒆𝒍𝒑', callback_data='help'),
-            InlineKeyboardButton('𝑨𝒃𝒐𝒖𝒕', callback_data='about')
+            InlineKeyboardButton('𝑯𝒆𝒍𝒑🍃', callback_data='help'),
+            InlineKeyboardButton('𝑨𝒃𝒐𝒖𝒕🍃', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
