@@ -15,9 +15,7 @@ class script(object):
     START_TXT = environ.get("START_TXT", '''<b>Hello {} 👋🏻 Im Search Bot I can share Movies and Series 😁.</b>
 
 <i>Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ sᴇᴇ ᴛʜᴇ ᴍᴀɢɪᴄ ᴏʀ ʀᴇᴀᴅ ᴍᴏʀᴇ ғʀᴏᴍ ᴛʜᴇ ᴍᴇɴᴜ ʙᴇʟᴏᴡ</i>''')
-    HELP_TXT = """𝙷𝙴𝚈 {}
-𝙷𝙴𝚁𝙴 𝙸𝚂 𝙼𝚈 𝙷𝙴𝙻𝙿 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂.\n
-<b><i><u>How To Request A Movie💡</b></i></u>\n
+    HELP_TXT = """<b><i><u>How To Request A Movie💡</b></i></u>\n
 𝐷𝑜𝑛𝑡 𝑇𝑦𝑝𝑒 𝑀𝑜𝑣𝑖𝑒 𝐿𝑎𝑛𝑔𝑢𝑎𝑔𝑒𝑠 𝑊𝑖𝑡ℎ 𝑡ℎ𝑒 𝑇𝑖𝑡𝑙𝑒..❗️
 𝐷𝑜𝑛'𝑡 𝑇𝑦𝑝𝑒 𝑊𝑜𝑟𝑑𝑠 𝐿𝑖𝑘𝑒 (𝐻𝐷, 𝑀𝑜𝑣𝑖𝑒, &  𝑒𝑡𝑐..) 
 𝑆𝑒𝑛𝑑 𝑀𝑂𝑉𝐼𝐸 𝑁𝐴𝑀𝐸  𝐴𝑁𝐷 𝑌𝐸𝐴𝑅 𝑂𝑛𝑙𝑦 𝐹𝑜𝑟 𝐵𝑒𝑡𝑡𝑒𝑟 𝑅𝑒𝑠𝑢𝑙𝑡...❕\n
