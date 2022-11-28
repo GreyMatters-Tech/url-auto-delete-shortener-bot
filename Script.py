@@ -20,7 +20,7 @@ class script(object):
 𝐷𝑜𝑛'𝑡 𝑇𝑦𝑝𝑒 𝑊𝑜𝑟𝑑𝑠 𝐿𝑖𝑘𝑒 (𝐻𝐷, 𝑀𝑜𝑣𝑖𝑒, &  𝑒𝑡𝑐..) 
 𝑆𝑒𝑛𝑑 𝑀𝑂𝑉𝐼𝐸 𝑁𝐴𝑀𝐸  𝐴𝑁𝐷 𝑌𝐸𝐴𝑅 𝑂𝑛𝑙𝑦 𝐹𝑜𝑟 𝐵𝑒𝑡𝑡𝑒𝑟 𝑅𝑒𝑠𝑢𝑙𝑡...❕\n
 <b><u>Examples</b></u>
-<i>Monster Malayalam Movie ❌\nMonster 2022✔️\n Monster <\i> 
+<i>Monster Malayalam Movie ❌\nMonster 2022✔️\n Monster ✔️<\i> 
 """
     ABOUT_TXT = """<b><i>🤖 ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/freakersfilterbot><b>ᴍᴏᴠɪᴇs ʙᴏᴛ</b></a>\n
 👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://www.instagram.com/naughty__nonsense/><b>ᴍᴀɴᴀғ</b></a>\n
