@@ -50,8 +50,6 @@ async def start(client, message):
             InlineKeyboardButton('𝑺𝒆𝒓𝒊𝒆𝒔 𝑼𝒑𝒅𝒂𝒕𝒆𝒔🍃', url='https://t.me/freakers_series'),
             InlineKeyboardButton('𝑴𝒐𝒗𝒊𝒆 𝑼𝒑𝒅𝒂𝒕𝒆𝒔🍃', url='https://t.me/freakersmovie')
             ],[
-            InlineKeyboardButton('𝑺𝒆𝒂𝒓𝒄𝒉 𝑭𝒊𝒍𝒆𝒔🔎', switch_inline_query_current_chat='')
-            ],[
             InlineKeyboardButton('𝑯𝒆𝒍𝒑🍃', callback_data='help'),
             InlineKeyboardButton('𝑨𝒃𝒐𝒖𝒕🍃', callback_data='about')
         ]]
@@ -97,8 +95,6 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('𝑺𝒆𝒓𝒊𝒆𝒔 𝑼𝒑𝒅𝒂𝒕𝒆𝒔🍃', url='https://t.me/freakers_series'),
             InlineKeyboardButton('𝑴𝒐𝒗𝒊𝒆 𝑼𝒑𝒅𝒂𝒕𝒆𝒔🍃', url='https://t.me/freakersmovie')
-            ],[
-            InlineKeyboardButton('𝑺𝒆𝒂𝒓𝒄𝒉 𝑭𝒊𝒍𝒆𝒔🔎', switch_inline_query_current_chat='')
             ],[
             InlineKeyboardButton('𝑯𝒆𝒍𝒑🍃', callback_data='help'),
             InlineKeyboardButton('𝑨𝒃𝒐𝒖𝒕🍃', callback_data='about')
