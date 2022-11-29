@@ -84,7 +84,7 @@ async def send_for_index(bot, message):
     if message.from_user.id in ADMINS:
         buttons = [
             [
-                InlineKeyboardButton('𝑌𝑒𝑠',
+                InlineKeyboardButton(' 𝑌𝑒𝑠',
                                      callback_data=f'index#accept#{chat_id}#{last_msg_id}#{message.from_user.id}')
             ],
             [
