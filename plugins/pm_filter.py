@@ -748,7 +748,6 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        await message.reply_photo(photo=random.choice(PICS),
         cap=f"🧿𝘛𝘪𝘵𝘭𝘦 : <code>{search}</code>\n★ 𝘗𝘰𝘸𝘦𝘳𝘦𝘥 𝘉𝘺 : @freakersfilmy ©")
     if imdb and imdb.get('poster'):
         try:
