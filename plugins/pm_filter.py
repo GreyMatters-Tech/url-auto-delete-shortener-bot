@@ -750,7 +750,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         await message.reply_photo(
             photo=random.choice(PICS)),
-        caption=script.FILE_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+        caption=f"🧿 𝘛𝘪𝘵𝘭𝘦 :- {search} \n🎙️ 𝘙𝘦𝘲𝘶𝘦𝘴𝘵𝘦𝘥 𝘉𝘺 :- {}\n★ 𝘗𝘰𝘸𝘦𝘳𝘦𝘥 𝘉𝘺 :- @freakersfilmy ©"
     if imdb and imdb.get('poster'):
         try:
             hehe =  await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
