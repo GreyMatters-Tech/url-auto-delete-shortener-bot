@@ -125,18 +125,18 @@ async def next_page(bot, query):
     if n_offset == 0:
         btn.append(
             [InlineKeyboardButton("👈𝐵𝑎𝑐𝑘", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"📂 𝑃𝑎𝑔𝑒𝑠 {math.ceil(int(offset) / 5) + 1} / {math.ceil(total / 5)}",
+             InlineKeyboardButton(f"📂 𝑃𝑎𝑔𝑒𝑠 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"📂 {math.ceil(int(offset) / 5) + 1} / {math.ceil(total / 5)}", callback_data="pages"),
+            [InlineKeyboardButton(f"📂 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
              InlineKeyboardButton("𝑁𝑒𝑥𝑡👉", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("👈𝐵𝑎𝑐𝑘", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"📂 {math.ceil(int(offset) / 5) + 1} / {math.ceil(total / 5)}", callback_data="pages"),
+                InlineKeyboardButton(f"📂 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("𝑁𝑒𝑥𝑡👉", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
@@ -669,7 +669,11 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", 
+                    text=f"{file.file_name}", 
+                    url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
+                ),
+                InlineKeyboardButton(
+                    text=f"{get_size(file.file_size)}", 
                     url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
             ]
@@ -683,7 +687,7 @@ async def auto_filter(client, msg, spoll=False):
                     url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}]", 
+                    text=f"{get_size(file.file_size)}", 
                     url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
             ]
@@ -701,7 +705,7 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"📂 1/{math.ceil(int(total_results) / 5)}", callback_data="pages"),
+            [InlineKeyboardButton(text=f"📂 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="𝑁𝑒𝑥𝑡👉", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
