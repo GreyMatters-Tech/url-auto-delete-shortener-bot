@@ -29,6 +29,7 @@ class script(object):
 📢 sᴇʀɪᴇs ɢʀᴏᴜᴘ : <a href=https://t.me/FF_Series_Only><b></b>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>\n
 📢 sᴇʀɪᴇs ᴜᴘᴅᴀᴛᴇs : <a href=https://t.me/freakers_series><b></b>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>\n
 📢 sᴇʀɪᴇs ʙᴏᴛ : <a href=https://t.me/ffseriesbot><b></b>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>\n
+🔞 18+ ʙᴏᴛ  : <a href=https://t.me/Audltsonly_Bot><b></b>ᴠ4.0</a>\n
 ✍🏼 ʟᴀɴɢᴜᴀɢᴇ : ᴘʏʀᴏɢʀᴀᴍ\n
 📚 ꜰʀᴀᴍᴇᴡᴏʀᴋ : ᴘʏᴛʜᴏɴ 3\n
 📡 ʜᴏsᴛᴇᴅ ᴏɴ : <a href=https://railway.app/><b></b>ʀᴀɪʟᴡᴀʏ</a>\n
