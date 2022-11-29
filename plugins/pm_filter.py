@@ -63,7 +63,7 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("oKda", show_alert=True)
+        return await query.answer("𝘚𝘰𝘳𝘳𝘺..! 𝘖𝘯𝘭𝘺 𝘙𝘦𝘲𝘶𝘦𝘴𝘵𝘦𝘥 𝘗𝘦𝘳𝘴𝘰𝘯 𝘊𝘢𝘯 𝘈𝘤𝘤𝘦𝘴𝘴 𝘛𝘩𝘪𝘴 𝘉𝘶𝘵𝘵𝘰𝘯  𝘠𝘰𝘶 𝘊𝘢𝘯 𝘛𝘳𝘺 𝘛𝘰 𝘙𝘦-𝘴𝘦𝘢𝘳𝘤𝘩 𝘛𝘩𝘦 𝘔𝘰𝘷𝘪𝘦 𝘕𝘢𝘮𝘦..!", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -154,7 +154,7 @@ async def next_page(bot, query):
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer("😁 𝗛𝗲𝘆 𝗙𝗿𝗶𝗲𝗻𝗱,𝗣𝗹𝗲𝗮𝘀𝗲 𝗦𝗲𝗮𝗿𝗰𝗵 𝗬𝗼𝘂𝗿𝘀𝗲𝗹𝗳.", show_alert=True)
+        return await query.answer("𝘚𝘰𝘳𝘳𝘺..! 𝘖𝘯𝘭𝘺 𝘙𝘦𝘲𝘶𝘦𝘴𝘵𝘦𝘥 𝘗𝘦𝘳𝘴𝘰𝘯 𝘊𝘢𝘯 𝘈𝘤𝘤𝘦𝘴𝘴 𝘛𝘩𝘪𝘴 𝘉𝘶𝘵𝘵𝘰𝘯  𝘠𝘰𝘶 𝘊𝘢𝘯 𝘛𝘳𝘺 𝘛𝘰 𝘙𝘦-𝘴𝘦𝘢𝘳𝘤𝘩 𝘛𝘩𝘦 𝘔𝘰𝘷𝘪𝘦 𝘕𝘢𝘮𝘦..!", show_alert=True)
     if movie_ == "close_spellcheck":
         return await query.message.delete()
     movies = SPELL_CHECK.get(query.message.reply_to_message.id)
