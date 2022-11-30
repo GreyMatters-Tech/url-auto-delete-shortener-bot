@@ -137,6 +137,7 @@ link - to create link for one post
  - Thanks To [ᎯℕUℛᎯᎶ](https://telegram.dog/gurubhai11) for his awesome Auto-delete Feature.
  - Thanks To [RushikeshNarule](https://github.com/rushikeshnarule) for Search in PM feature.
  - Thanks To [TGNVS](https://github.com/TGNVS) for his koyeb idea.
+ - Thanks To [Saikatwtf](https://github.com/saikatwtf) for adding Shareus Support.
  - Thanks To All Everyone In This Journey
 
 ### Note
