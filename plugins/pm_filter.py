@@ -1,5 +1,4 @@
 import asyncio
-import random
 import re
 import ast
 import math
@@ -13,7 +12,7 @@ from info import *
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
-from utils import get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings
+from utils import get_size, is_subscribed, get_poster, temp, get_settings, save_group_settings
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_file_details, get_search_results
 from database.filters_mdb import (
@@ -70,7 +69,7 @@ async def next_page(bot, query):
         offset = 0
     search = BUTTONS.get(key)
     if not search:
-        await query.answer("𝘍𝘪𝘭𝘵𝘦𝘳 𝘙𝘦𝘴𝘶𝘭𝘵 𝘌𝘹𝘱𝘪𝘳𝘦𝘥.. \n𝘙𝘦𝘲𝘶𝘦𝘴𝘵 𝘈𝘨𝘪𝘯.!", show_alert=True)
+        await query.answer("You are using one of my old messages, please send the request again.", show_alert=True)
         return
 
     files, n_offset, total = await get_search_results(search, offset=offset, filter=True)
@@ -86,11 +85,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", 
-                    url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
-                ),
-                InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}]", 
+                    text=f"{get_size(file.file_size)} {file.file_name}", 
                     url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
             ]
@@ -104,7 +99,7 @@ async def next_page(bot, query):
                     url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}]", 
+                    text=f"{get_size(file.file_size)}", 
                     url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
             ]
@@ -113,7 +108,7 @@ async def next_page(bot, query):
 
     btn.insert(0,
         [
-            InlineKeyboardButton(text="🍃𝙃𝙤𝙬 𝙏𝙤 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙?", url='https://t.me/SixFlix/44')
+            InlineKeyboardButton(text="🤔 𝙃𝙤𝙬 𝙏𝙤 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 ❓", url='https://t.me/SixFlix/33')
         ]
     )
 
@@ -125,20 +120,20 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("👈🏽𝘽𝙖𝙘𝙠", callback_data=f"next_{req}_{key}_{off_set}"),
+            [InlineKeyboardButton("👈🏽 𝘽𝙖𝙘𝙠", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"📂 𝙋𝙖𝙜𝙚𝙨 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"📂 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("𝙉𝙚𝙭𝙩👉🏽", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton("𝙉𝙚𝙭𝙩 👉🏽", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
-                InlineKeyboardButton("👈🏽𝘽𝙖𝙘𝙠", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton("👈🏽 𝘽𝙖𝙘𝙠", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"📂 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("𝙉𝙚𝙭𝙩👉🏽", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("𝙉𝙚𝙭𝙩 👉🏽", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     try:
@@ -149,29 +144,6 @@ async def next_page(bot, query):
         pass
     await query.answer()
 
-
-@Client.on_callback_query(filters.regex(r"^spolling"))
-async def advantage_spoll_choker(bot, query):
-    _, user, movie_ = query.data.split('#')
-    if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer("𝘚𝘰𝘳𝘳𝘺..! 𝘖𝘯𝘭𝘺 𝘙𝘦𝘲𝘶𝘦𝘴𝘵𝘦𝘥 𝘗𝘦𝘳𝘴𝘰𝘯 𝘊𝘢𝘯 𝘈𝘤𝘤𝘦𝘴𝘴 𝘛𝘩𝘪𝘴 𝘉𝘶𝘵𝘵𝘰𝘯  𝘠𝘰𝘶 𝘊𝘢𝘯 𝘛𝘳𝘺 𝘛𝘰 𝘙𝘦-𝘴𝘦𝘢𝘳𝘤𝘩 𝘛𝘩𝘦 𝘔𝘰𝘷𝘪𝘦 𝘕𝘢𝘮𝘦..!", show_alert=True)
-    if movie_ == "close_spellcheck":
-        return await query.message.delete()
-    movies = SPELL_CHECK.get(query.message.reply_to_message.id)
-    if not movies:
-        return await query.answer("𝐋𝐢𝐧𝐤 𝐄𝐱𝐩𝐢𝐫𝐞𝐝 𝐊𝐢𝐧𝐝𝐥𝐲 𝐏𝐥𝐞𝐚𝐬𝐞 𝐒𝐞𝐚𝐫𝐜𝐡 𝐀𝐠𝐚𝐢𝐧 🙂.", show_alert=True)
-    movie = movies[(int(movie_))]
-    await query.answer('𝙲𝙷𝙴𝙲𝙺𝙸𝙽𝙶 𝙵𝙸𝙻𝙴 𝙾𝙽 𝙼𝚈 𝙳𝙰𝚃𝙰𝙱𝙰𝚂𝙴...//')
-    k = await manual_filters(bot, query.message, text=movie)
-    if k == False:
-        files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
-        if files:
-            k = (movie, files, offset, total_results)
-            await auto_filter(bot, query, k)
-        else:
-            k = await query.message.edit('𝚃𝙷𝙸𝚂 𝙼𝙾𝚅𝙸𝙴 I𝚂 𝙽𝙾𝚃 𝚈𝙴𝚃 𝚁𝙴𝙻𝙴𝙰𝚂𝙴𝙳 𝙾𝚁 𝙰𝙳𝙳𝙴𝙳 𝚃𝙾 𝙳𝙰𝚃𝚂𝙱𝙰𝚂𝙴 💌')
-            await asyncio.sleep(10)
-            await k.delete()
 
 
 @Client.on_callback_query()
@@ -248,9 +220,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             cb = "disconnect"
 
         keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton(f"{𝑆𝑡𝑎𝑡}", callback_data=f"{cb}:{group_id}"),
-             InlineKeyboardButton("𝐷𝑒𝑙𝑒𝑡𝑒", callback_data=f"deletecb:{group_id}")],
-            [InlineKeyboardButton("𝐵𝑎𝑐𝑘", callback_data="backcb")]
+            [InlineKeyboardButton(f"{stat}", callback_data=f"{cb}:{group_id}"),
+             InlineKeyboardButton("𝙳𝙴𝙻𝙴𝚃𝙴", callback_data=f"deletecb:{group_id}")],
+            [InlineKeyboardButton("𝙱𝙰𝙲𝙺", callback_data="backcb")]
         ])
 
         await query.message.edit_text(
@@ -459,9 +431,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝑨𝒖𝒕𝒐 𝑭𝒊𝒍𝒕𝒆𝒓', callback_data='autofilter')
         ], [
             InlineKeyboardButton('𝑪𝒐𝒏𝒏𝒆𝒄𝒕𝒊𝒐𝒏𝒔', callback_data='coct'),
-            InlineKeyboardButton('𝑬𝒙𝒕𝒓𝒂 𝑴𝒐𝒅𝒔', callback_data='extra')
+            InlineKeyboardButton('𝑬𝒙𝒕𝒓𝒂𝒔', callback_data='extra')
         ], [
-            InlineKeyboardButton('𝑩𝒂𝒄𝒌 𝑻𝒐 𝑯𝒐𝒎𝒆', callback_data='start'),
+            InlineKeyboardButton('🏠 H𝙾𝙼𝙴 🏠𝑩𝒂𝒄𝒌 𝑻𝒐 𝑯𝒐𝒎𝒆', callback_data='start'),
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -481,7 +453,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('𝑩𝒂𝒄𝒌', callback_data='about')
+            InlineKeyboardButton('𝑩𝒂𝒄𝒌 𝑻𝒐 𝑯𝒐𝒎𝒆', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -533,7 +505,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "extra":
         buttons = [[
             InlineKeyboardButton('𝑩𝒂𝒄𝒌', callback_data='help'),
-            InlineKeyboardButton('𝑨𝒅𝒎𝒊𝒏', callback_data='admin')
+            InlineKeyboardButton('𝑨𝒅𝒎𝒊𝒏 𝑪𝑴𝑫', callback_data='admin')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -606,36 +578,36 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if settings is not None:
             buttons = [
                 [
-                    InlineKeyboardButton('ғɪʟᴛᴇʀ ʙᴜᴛᴛᴏɴ',
+                    InlineKeyboardButton('𝐅𝐈𝐋𝐓𝐄𝐑 𝐁𝐔𝐓𝐓𝐎𝐍',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('sɪɴɢʟᴇ' if settings["button"] else 'ᴅᴏᴜʙʟᴇ',
+                    InlineKeyboardButton('𝐒𝐈𝐍𝐆𝐋𝐄' if settings["button"] else '𝐃𝐎𝐔𝐁𝐋𝐄',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('ʙᴏᴛ ᴘᴍ', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ʏᴇs' if settings["botpm"] else 'ɴᴏ',
+                    InlineKeyboardButton('𝐁𝐎𝐓 𝐏𝐌', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('𝐘𝐄𝐒' if settings["botpm"] else '𝐍𝐎',
                                          callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('ғɪʟᴇ sᴇᴄᴜʀᴇ',
+                    InlineKeyboardButton('𝐅𝐈𝐋𝐄 𝐒𝐄𝐂𝐔𝐑𝐄',
                                          callback_data=f'setgs#file_secure#{settings["file_secure"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ʏᴇs' if settings["file_secure"] else 'ɴᴏ',
+                    InlineKeyboardButton('𝐘𝐄𝐒' if settings["file_secure"] else '𝐍𝐎',
                                          callback_data=f'setgs#file_secure#{settings["file_secure"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('ɪᴍᴅʙ', callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ʏᴇs' if settings["imdb"] else 'ɴᴏ',
+                    InlineKeyboardButton('𝐈𝐌𝐃𝐁', callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('𝐘𝐄𝐒' if settings["imdb"] else '𝐍𝐎',
                                          callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('sᴘᴇʟʟ ᴄʜᴇᴄᴋ',
+                    InlineKeyboardButton('𝐒𝐏𝐄𝐋𝐋 𝐂𝐇𝐄𝐂𝐊',
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ʏᴇs' if settings["spell_check"] else 'ɴᴏ',
+                    InlineKeyboardButton('𝐘𝐄𝐒' if settings["spell_check"] else '𝐍𝐎',
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('ᴡᴇʟᴄᴏᴍᴇ', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ʏᴇs' if settings["welcome"] else 'ɴᴏ',
+                    InlineKeyboardButton('𝐖𝐄𝐋𝐂𝐎𝐌𝐄', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('𝐘𝐄𝐒' if settings["welcome"] else '𝐍𝐎',
                                          callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
                 ]
             ]
@@ -670,11 +642,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", 
-                    url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
-                ),
-                InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)}", 
+                    text=f"{get_size(file.file_size)}{file.file_name}", 
                     url=await get_shortlink(f"https://t.me/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
             ]
@@ -697,7 +665,7 @@ async def auto_filter(client, msg, spoll=False):
 
     btn.insert(0,
         [
-            InlineKeyboardButton(text="🍃𝙃𝙤𝙬 𝙏𝙤 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙?", url='https://t.me/SixFlix/44')
+            InlineKeyboardButton(text="🍃𝙃𝙤𝙬 𝙏𝙤 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙❓", url='https://t.me/SixFlix/33')
         ]
     )
 
@@ -707,7 +675,7 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"📂 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="𝙉𝙚𝙭𝙩👉🏽", callback_data=f"next_{req}_{key}_{offset}")]
+             InlineKeyboardButton(text="𝙉𝙚𝙭𝙩 👉🏽", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
@@ -748,7 +716,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"🧿𝘛𝘪𝘵𝘭𝘦 : <code>{search}</code>\n★ 𝘗𝘰𝘸𝘦𝘳𝘦𝘥 𝘉𝘺 : @freakersfilmy ©"
+        cap = f"Rᴇǫᴜᴇsᴛᴇᴅ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search}</code>\n😌 ɪꜰ ᴛʜᴇ ᴍᴏᴠɪᴇ ʏᴏᴜ ᴀʀᴇ ʟᴏᴏᴋɪɴɢ ꜰᴏʀ ɪs ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ᴛʜᴇɴ ʟᴇᴀᴠᴇ ᴀ ᴍᴇssᴀɢᴇ ʙᴇʟᴏᴡ 😌 \nᴇxᴀᴍᴘʟᴇ :\nᴇɴᴛᴇʀ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ (ʏᴇᴀʀ) ᴛᴀɢ @admin"
     if imdb and imdb.get('poster'):
         try:
             hehe =  await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -776,58 +744,8 @@ async def auto_filter(client, msg, spoll=False):
             await asyncio.sleep(SELF_DELETE_SECONDS)
             await fuk.delete()
 
-async def advantage_spell_chok(msg):
-    query = re.sub(
-        r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
-        "", msg.text, flags=re.IGNORECASE)  # plis contribute some common words
-    query = query.strip() + " movie"
-    g_s = await search_gagala(query)
-    g_s += await search_gagala(msg.text)
-    gs_parsed = []
-    if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
-        await asyncio.sleep(8)
-        await k.delete()
-        return
-    regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
-    gs = list(filter(regex.match, g_s))
-    gs_parsed = [re.sub(
-        r'\b(\-([a-zA-Z-\s])\-\simdb|(\-\s)?imdb|(\-\s)?wikipedia|\(|\)|\-|reviews|full|all|episode(s)?|film|movie|series)',
-        '', i, flags=re.IGNORECASE) for i in gs]
-    if not gs_parsed:
-        reg = re.compile(r"watch(\s[a-zA-Z0-9_\s\-\(\)]*)*\|.*",
-                         re.IGNORECASE)  # match something like Watch Niram | Amazon Prime
-        for mv in g_s:
-            match = reg.match(mv)
-            if match:
-                gs_parsed.append(match.group(1))
-    user = msg.from_user.id if msg.from_user else 0
-    movielist = []
-    gs_parsed = list(dict.fromkeys(gs_parsed))  # removing duplicates https://stackoverflow.com/a/7961425
-    if len(gs_parsed) > 3:
-        gs_parsed = gs_parsed[:3]
-    if gs_parsed:
-        for mov in gs_parsed:
-            imdb_s = await get_poster(mov.strip(), bulk=True)  # searching each keyword in imdb
-            if imdb_s:
-                movielist += [movie.get('title') for movie in imdb_s]
-    movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
-    movielist = list(dict.fromkeys(movielist))  # removing duplicates
-    if not movielist:
-        k = await msg.reply("I couldn't find anything related to that. Check your spelling")
-        await asyncio.sleep(8)
-        await k.delete()
-        return
-    SPELL_CHECK[msg.id] = movielist
-    btn = [[
-        InlineKeyboardButton(
-            text=movie.strip(),
-            callback_data=f"spolling#{user}#{k}",
-        )
-    ] for k, movie in enumerate(movielist)]
-    btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
-                    reply_markup=InlineKeyboardMarkup(btn))
+
+
 
 
 async def manual_filters(client, message, text=False):
