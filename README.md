@@ -127,7 +127,7 @@ link - to create link for one post
 
 ## Thanks to 
  - Thanks To Dan For His Awesome [Library](https://github.com/pyrogram/pyrogram)
- - Thanks To [ᎯℕUℛᎯᎶ](https://telegram.dog/gurubhai11) for his awesome Auto-delete Feature.
+ - Thanks To [Subinps](https://github.com/subinps) for Original EvaMaria.
  - Thanks To [RushikeshNarule](https://github.com/rushikeshnarule) for Search in PM feature.
  - Thanks To All Everyone In This Journey
 
