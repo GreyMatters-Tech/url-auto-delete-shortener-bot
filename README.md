@@ -129,12 +129,9 @@ link - to create link for one post
 [![telegram badge](https://img.shields.io/badge/Telegram-Channel-30302f?style=flat&logo=telegram)](https://t.me/greymatter_bots)
 
 ## Credits 
-* [![ᎯℕUℛᎯᎶ](https://img.shields.io/static/v1?label=EvaMaria&message=devs&color=critical)](https://telegram.dog/sources_cods)
-
-
 ## Thanks to 
  - Thanks To Dan For His Awesome [Library](https://github.com/pyrogram/pyrogram)
- - Thanks To [ᎯℕUℛᎯᎶ](https://telegram.dog/gurubhai11) for his awesome Auto-delete Feature.
+ - Thanks To [Subinps](https://github.com/subinps) for Original EvaMaria.
  - Thanks To [RushikeshNarule](https://github.com/rushikeshnarule) for Search in PM feature.
  - Thanks To [TGNVS](https://github.com/TGNVS) for his koyeb idea.
  - Thanks To All Everyone In This Journey
