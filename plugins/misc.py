@@ -146,6 +146,7 @@ async def imdb_search(client, message):
         ]
         await k.edit('Here is what i found on IMDb', reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(30)
+        await message.delete()
         await k.delete()        
     else:
         await message.reply('Give me a movie / series Name')
