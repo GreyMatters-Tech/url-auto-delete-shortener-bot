@@ -108,7 +108,7 @@ async def next_page(bot, query):
 
     btn.insert(0,
         [
-            InlineKeyboardButton(text="⚡HOW TO DOWNLOAD⚡", url='https://www.youtube.com/watch?v=tfjkB0UG0eI')
+            InlineKeyboardButton(text="⚡HOW TO DOWNLOAD⚡", url='https://t.me/central_tutorial/2')
         ]
     )
 
@@ -693,7 +693,7 @@ async def auto_filter(client, msg, spoll=False):
 
     btn.insert(0,
         [
-            InlineKeyboardButton(text="⚡HOW TO DOWNLOAD⚡", url='https://www.youtube.com/watch?v=tfjkB0UG0eI')
+            InlineKeyboardButton(text="⚡HOW TO DOWNLOAD⚡", url='https://t.me/central_tutorial/2')
         ]
     )
 
@@ -751,6 +751,7 @@ async def auto_filter(client, msg, spoll=False):
                                       reply_markup=InlineKeyboardMarkup(btn))
             if SELF_DELETE:
                 await asyncio.sleep(SELF_DELETE_SECONDS)
+                await message.delete()
                 await hehe.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
@@ -758,17 +759,20 @@ async def auto_filter(client, msg, spoll=False):
             hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
             if SELF_DELETE:
                 await asyncio.sleep(SELF_DELETE_SECONDS)
+                await message.delete()
                 await hmm.delete()
         except Exception as e:
             logger.exception(e)
             fek = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
             if SELF_DELETE:
                 await asyncio.sleep(SELF_DELETE_SECONDS)
+                await message.delete()
                 await fek.delete()
     else:
         fuk = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
         if SELF_DELETE:
             await asyncio.sleep(SELF_DELETE_SECONDS)
+            await message.delete()
             await fuk.delete()
     if spoll:
         await msg.message.delete()
@@ -785,6 +789,7 @@ async def advantage_spell_chok(msg):
     if not g_s:
         k = await msg.reply("I couldn't find any movie in that name.")
         await asyncio.sleep(10)
+        await message.delete()
         await k.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
@@ -814,6 +819,7 @@ async def advantage_spell_chok(msg):
     if not movielist:
         k = await msg.reply("<b>I couldn't find anything related to that. Check your spelling OR Search in GOOGLE.COM \n\nPress only the Movie/Series name ONCE (without year)</b>")
         await asyncio.sleep(30)
+        await message.delete()
         await k.delete()
         return
     SPELL_CHECK[msg.id] = movielist
@@ -827,6 +833,7 @@ async def advantage_spell_chok(msg):
     s = await msg.reply("<b>I couldn't find anything related to that. :( Check your spelling OR Search in GOOGLE.COM \n\nDid you mean any one of these? \n\nPress only the Movie/Series name ONCE (without year)</b>",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(30)
+    await message.delete()
     await s.delete()
 
 async def manual_filters(client, message, text=False):
