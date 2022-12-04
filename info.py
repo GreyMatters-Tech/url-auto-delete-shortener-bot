@@ -82,7 +82,7 @@ if SELF_DELETE == "True":
 
     # Download Tutorial Button #
 DOWNLOAD_TEXT_NAME = "⚡HOW TO DOWNLOAD⚡"
-DOWNLOAD_TEXT_URL = "https://www.youtube.com/watch?v=tfjkB0UG0eI"
+DOWNLOAD_TEXT_URL = "https://t.me/central_tutorial/2"
 
    # Custom Caption Under Button #
 CAPTION_BUTTON = "⚡UPDATES CHANNEL⚡"
