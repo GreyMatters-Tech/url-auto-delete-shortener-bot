@@ -818,9 +818,10 @@ async def advantage_spell_chok(msg):
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
         k = await msg.reply("<b>I couldn't find anything related to that. Check your spelling OR Search in GOOGLE.COM \n\nPress only the Movie/Series name ONCE (without year)</b>")
-        await asyncio.sleep(30)
-        await message.delete()
-        await k.delete()
+        if SELF_DELETE:
+            await asyncio.sleep(SELF_DELETE_SECONDS)
+            await message.delete()
+            await k.delete()
         return
     SPELL_CHECK[msg.id] = movielist
     btn = [[
@@ -832,9 +833,10 @@ async def advantage_spell_chok(msg):
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
     s = await msg.reply("<b>I couldn't find anything related to that. :( Check your spelling OR Search in GOOGLE.COM \n\nDid you mean any one of these? \n\nPress only the Movie/Series name ONCE (without year)</b>",
                     reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(30)
-    await message.delete()
-    await s.delete()
+    if SELF_DELETE:
+            await asyncio.sleep(SELF_DELETE_SECONDS)
+            await message.delete()
+            await s.delete()
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
