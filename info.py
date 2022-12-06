@@ -85,7 +85,7 @@ DOWNLOAD_TEXT_NAME = "📥 HOW TO DOWNLOAD 📥"
 DOWNLOAD_TEXT_URL = "https://t.me/master4uhubmo/33"
 
 SCREENSHOTS_TEXT_NAME = "📸 SCREENSHOTS 📸"
-SCREENSHOTS_TEXT_URL = "https://t.me/+lZq4KUExpS85YmQ1"
+SCREENSHOTS_TEXT_URL = "https://t.me/screensortbot"
 
    # Custom Caption Under Button #
 CAPTION_BUTTON = "Subscribe"
