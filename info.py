@@ -84,9 +84,6 @@ if SELF_DELETE == "True":
 DOWNLOAD_TEXT_NAME = "📥 HOW TO DOWNLOAD 📥"
 DOWNLOAD_TEXT_URL = "https://t.me/master4uhubmo/33"
 
-SCREENSHOTS_TEXT_NAME = "📸 SCREENSHOTS 📸"
-SCREENSHOTS_TEXT_URL = "https://t.me/screensortbot"
-
    # Custom Caption Under Button #
 CAPTION_BUTTON = "Subscribe"
 CAPTION_BUTTON_URL = "https://youtube.com/@masterloot07"
