@@ -31,9 +31,6 @@ async def start(client, message):
             [
                 InlineKeyboardButton(text=DOWNLOAD_TEXT_NAME,url=DOWNLOAD_TEXT_URL)
             ],
-            [
-                InlinekeyboardButton(text=SCREENSHOTS_TEXT_NAME,url=SCREENSHOTS_TEXT_URL)
-            ],
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
