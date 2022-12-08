@@ -82,7 +82,7 @@ if SELF_DELETE == "True":
 
     # Download Tutorial Button #
 DOWNLOAD_TEXT_NAME = "📥 HOW TO DOWNLOAD 📥"
-DOWNLOAD_TEXT_URL = "https://t.me/master4uhubmo/33"
+DOWNLOAD_TEXT_URL = "https://t.me/Py_Movies/66"
 
    # Custom Caption Under Button #
 CAPTION_BUTTON = "Subscribe"
