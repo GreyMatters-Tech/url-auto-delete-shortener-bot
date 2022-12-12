@@ -26,7 +26,7 @@ async def start(client, message):
                 InlineKeyboardButton('Main Channel', url='https://t.me/cinemadudes1')
             ],
             [
-                InlineKeyboardButton('Request Movies 🔗', url='https://t.me/cinemadudes_support'),
+                InlineKeyboardButton('Request Movies 🔗', url='https://t.me/+XnCNbZ23N5wzZTQ1'),
             ],
             [
                 InlineKeyboardButton(text=DOWNLOAD_TEXT_NAME,url=DOWNLOAD_TEXT_URL)
@@ -47,7 +47,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('⚚ ΛᎠᎠ MΞ ϮԾ YԾUᏒ GᏒԾUᎮ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('⚡ Request Movies', url='https://t.me/cinemadudes_support'),
+            InlineKeyboardButton('⚡ Request Movies', url='https://t.me/+XnCNbZ23N5wzZTQ1'),
             InlineKeyboardButton('🤖 Main Channel', url='https://t.me/cinemadudes1')
             ],[
             InlineKeyboardButton('♻️ HΞLᎮ ♻️', callback_data='help'),
@@ -93,7 +93,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('⚚ ΛᎠᎠ MΞ ϮԾ YԾUᏒ GᏒԾUᎮ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('⚡ Request Movies', url='https://t.me/cinemadudes_support'),
+            InlineKeyboardButton('⚡ Request Movies', url='https://t.me/+XnCNbZ23N5wzZTQ1'),
             InlineKeyboardButton('🤖 UᎮDΛTΞS 🤖', url='https://t.me/cinemadudes1')
             ],[
             InlineKeyboardButton('♻️ HΞLᎮ ♻️', callback_data='help'),
