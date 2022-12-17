@@ -733,7 +733,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"Mᴏᴠɪᴇ Nᴀᴍᴇ 🎞️ : <code>{search}</code>\n\n🔗 Join : @CinemaDudes1 🔗 \n\n This Msg will delete in 5 min "
+        cap = f"Mᴏᴠɪᴇ Nᴀᴍᴇ 🎞️ : <code>{search}</code>\n\n🔗 Join : @CinemaDudes1 🔗 \n\n This Msg will delete in 5 min /n/n Note : If your movie is not below then check spelling of the movie name,year.or else wait till our admin upload the movie and reply to you! /n/n If you don't know to download movie then watch the video below 👇"
 
 
     if imdb and imdb.get('poster'):
