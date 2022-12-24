@@ -23,10 +23,10 @@ async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
             [
-                InlineKeyboardButton('⚡ 𝗨𝗣𝗗𝗔𝗧𝗘𝗦 ⚡', url='https://t.me/MX_Networks')
+                InlineKeyboardButton('⚡ UPDATES ⚡', url='https://t.me/MX_Networks')
             ],
             [
-                InlineKeyboardButton('⚡ 𝗚𝗥𝗢𝗨𝗣 ⚡', url=f"https://t.me/MX_Movie_Request"),
+                InlineKeyboardButton('⚡ GROUP ⚡', url=f"https://t.me/MX_Movie_Request"),
             ],
             [
                 InlineKeyboardButton(text=DOWNLOAD_TEXT_NAME,url=DOWNLOAD_TEXT_URL)
@@ -47,11 +47,11 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('⚚ ΛᎠᎠ MΞ ϮԾ YԾUᏒ GᏒԾUᎮ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('⚡ 𝗚𝗥𝗢𝗨𝗣 ⚡', url='https://MX_Movie_Request'),
-            InlineKeyboardButton('🤖 𝗨𝗣𝗗𝗔𝗧𝗘𝗦 🤖', url='https://t.me/MX_Networks')
+            InlineKeyboardButton('⚡ GROUP ⚡', url='https://MX_Movie_Request'),
+            InlineKeyboardButton('🤖 UPDATES 🤖', url='https://t.me/MX_Networks')
             ],[
-            InlineKeyboardButton('♻️ 𝗛𝗘𝗟𝗣 ♻️', callback_data='help'),
-            InlineKeyboardButton('♻️ 𝗔𝗕𝗢𝗨𝗧 ♻️', callback_data='about')
+            InlineKeyboardButton('♻️ HELP ♻️', callback_data='help'),
+            InlineKeyboardButton('♻️ ABOUT ♻️', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -93,11 +93,11 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('⚚ ΛᎠᎠ MΞ ϮԾ YԾUᏒ GᏒԾUᎮ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('⚡ 𝗚𝗥𝗢𝗨𝗣 ⚡', url='https://t.me/MX_Movie_Request'),
-            InlineKeyboardButton('🤖 𝗨𝗣𝗗𝗔𝗧𝗘𝗦 🤖', url='https://t.me/MX_Networks')
+            InlineKeyboardButton('⚡ GROUP ⚡', url='https://t.me/MX_Movie_Request'),
+            InlineKeyboardButton('🤖 UPDATES 🤖', url='https://t.me/MX_Networks')
             ],[
-            InlineKeyboardButton('♻️ 𝗛𝗘𝗟𝗣 ♻️', callback_data='help'),
-            InlineKeyboardButton('♻️ 𝗔𝗕𝗢𝗨𝗧 ♻️', callback_data='about')
+            InlineKeyboardButton('♻️ HELP ♻️', callback_data='help'),
+            InlineKeyboardButton('♻️ ABOUT ♻️', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -247,7 +247,7 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('sᴜʙsᴄʀɪʙᴇ', url='https://youtube.com/c/GreyMattersBot') ] ] ),
+        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('𝗝𝗢𝗜𝗡 𝗨𝗦', url='https://t.me/MX_Networks') ] ] ),
         protect_content=True if pre == 'filep' else False,
         )
                     
