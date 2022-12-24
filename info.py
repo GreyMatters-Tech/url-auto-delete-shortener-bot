@@ -81,11 +81,11 @@ if SELF_DELETE == "True":
     SELF_DELETE = True
 
     # Download Tutorial Button #
-DOWNLOAD_TEXT_NAME = "📥 𝗛𝗢𝗪 𝗧𝗢 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 📥"
+DOWNLOAD_TEXT_NAME = "📥 HOW TO DOWNLOAD 📥"
 DOWNLOAD_TEXT_URL = "https://t.me/how_to_open_1page_url"
 
    # Custom Caption Under Button #
-CAPTION_BUTTON = "𝗝𝗢𝗜𝗡 𝗨𝗦"
+CAPTION_BUTTON = "JOIN US"
 CAPTION_BUTTON_URL = "https://t.me/MX_Networks"
 
    # Auto Delete For Bot Sending Files #
