@@ -4,6 +4,7 @@ tgcrypto
 pymongo[srv]==3.12.3
 motor==2.5.1
 marshmallow==3.14.1
+cinemagoer
 umongo==3.0.1
 requests
 bs4
