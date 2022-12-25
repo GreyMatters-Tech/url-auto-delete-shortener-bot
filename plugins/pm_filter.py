@@ -682,7 +682,7 @@ async def auto_filter(client, msg, spoll=False):
 
     btn.insert(0,
         [
-            InlineKeyboardButton(text="📥 HOW TO DOWNLOAD 📥", url='https://t.me/how_to_open_1page_url')
+            InlineKeyboardButton(text="📥 𝗛𝗢𝗪 𝗧𝗢 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 📥", url='https://t.me/mdiskshortnerlink_tutorial')
         ]
     )
 
