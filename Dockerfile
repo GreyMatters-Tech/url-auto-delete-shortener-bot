@@ -1,12 +1,12 @@
-FROM python:3.10-slim-buster
+FROM debian:latest
 
 RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
+RUN apt install git curl python3-pip ffmpeg -y
+RUN pip3 install -U pip
+WORKDIR /app
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 
-RUN cd /
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN mkdir /Eva
-WORKDIR /Eva
-COPY start.sh /start.sh
-CMD ["/bin/bash", "/start.sh"]
+COPY . .
+
+CMD python3 bot.py
