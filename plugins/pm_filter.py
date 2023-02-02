@@ -432,14 +432,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('⚚ ΛᎠᎠ MΞ ϮԾ YԾUᏒ GᏒԾUᎮ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-        ], [
-            InlineKeyboardButton('⚡ SUBSCᏒIBΞ ⚡', url='https://youtube.com/@GreyMattersYT'),
-            InlineKeyboardButton('🤖 UᎮDΛTΞS 🤖', url='https://t.me/greymatter_bots')
-        ], [
-            InlineKeyboardButton('♻️ HΞLᎮ ♻️', callback_data='help'),
-            InlineKeyboardButton('♻️ ΛBOUT ♻️', callback_data='about')
-        ]]
+            InlineKeyboardButton('➕↖️ Add Me To Your Groups ↗️➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            ],[
+            InlineKeyboardButton('⚡Updates Channel⚡', url=f"https://t.me/update_channel45"),
+            InlineKeyboardButton('🟠 Main Channel 🟠', url='https://t.me/movie_studio45')
+            ],[
+             InlineKeyboardButton('🙆🏻 Help 🦾', callback_data='help'),
+            InlineKeyboardButton('♥️ About ♥️', callback_data='about')
+        ],[
+            InlineKeyboardButton('⚡Bollywood⚡', url=f"https://t.me/+6NysSOQAlAFmYWQ1"),
+            InlineKeyboardButton('🟠 Holywood 🟠', url='https://t.me/hollywood_movie45'),
+            InlineKeyboardButton('🟠 webseries 🟠', url='https://t.me/NEW_WEBSERIES45')
+            ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
