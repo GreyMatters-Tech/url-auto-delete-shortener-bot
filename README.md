@@ -1,6 +1,6 @@
 ## • What's New ?
 
-- ⟴ URL Shortener Added
+- ⟴ URL Shortener Addedd
 - ⟴ Self Delete Added (Auto delete)
 - ⟴ Filter On Off Option Added
 - ⟴ Custom Welcome Message
