@@ -11,10 +11,10 @@ def is_enabled(value, default):
         return default
 
 # Bot information
-SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
-BOT_TOKEN = environ.get('BOT_TOKEN', "")
+SESSION = environ.get('SESSION', 'BQEhZtoAh7B74PBSpxlM2KJ3KPdO9iBYK3DSMAKd7KnIZbx1UL7ptcos2UMVSb6p40OM3Jb4MymkMEV_CD7dujUCCgiM8yrNVj5iVHvD-p-yWqDh171AnUuMeV7vgUBBO9-YzGCI1qQWnBhHY6HSh8zXTZk1cxuOefAZT8oSRK9Exiy6KzWszniGOWdQkdtcuy54QMaO8-K-3PbaEVFphVNkjxTfwQE-a2ySaEBScnd1WoJ0uKnuGbsRfxVCgL6W6vCGUbvfVMic_ZQFq3m-Cj7R062Fa7j0LJgUz32a54TIrsv6Gc6Sbpukqbax_ChLVaNGZGWu2wUQoK8tv-1FCETxGE2gAAAAFK_HZQAA')
+API_ID = int(environ.get('API_ID', '18966234'))
+API_HASH = environ.get('API_HASH', '8fd30ecf9870884ed55da7f67ce08863')
+BOT_TOKEN = environ.get('BOT_TOKEN', "6897988736:AAHKZ1C-J361ujVEdE8ns-ii9ZrfHH8cAu4")
 
 #Port
 PORT = environ.get("PORT", "8080")
@@ -25,9 +25,9 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 PICS = (environ.get('PICS', 'https://telegra.ph/file/b806ad314d0c415571bde.jpg')).split()
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '2001653136').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5553026640').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '2001653136').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '5965789231').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL', '')
 auth_grp = environ.get('AUTH_GROUP')
