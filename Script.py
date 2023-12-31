@@ -15,7 +15,7 @@ class script(object):
     START_TXT = environ.get("START_TXT", '''<b>Hello {} 👋🏻, 𝖭𝗂𝖼𝖾 𝖳𝗈 𝖬𝖾𝖾𝗍 𝖸𝗈𝗎 🎊</b>\n
     I'm  I am Personal Movie/Series Provider Bot Of <a href=https://t.me/TEAMRTM><b>REALTIME MOVIE</b></a> 😁.\n\n
     For More Help Check 𝗛𝗲𝗹𝗽 Button Below. \n\n
-    𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝖽 𝖡𝗒 <a href=https://t.me/TEAMRTM><b>[సజల]</b></a>)
+    𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝖽 𝖡𝗒 <a href=https://t.me/TEAMRTM><b>[సజల]</b></a>''')
                             
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝙼𝚈 𝙷𝙴𝙻𝙿 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
