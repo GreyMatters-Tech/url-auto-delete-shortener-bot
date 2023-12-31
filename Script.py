@@ -12,7 +12,7 @@ def is_enabled(value, default):
 
 class script(object):
     HOME_BUTTONURL_UPDATES = environ.get("HOME_BUTTONURL_UPDATES", 'https://omegalinks.in/ref/GreyMatter6458')
-    START_TXT = environ.get("START_TXT", '''<b>Hello {} 👋🏻, 𝖭𝗂𝖼𝖾 𝖳𝗈 𝖬𝖾𝖾𝗍 𝖸𝗈𝗎 🎊</b>\nI'm  I am Personal Movie/Series Provider Bot Of <a href=https://t.me/TEAMRTM><b>REALTIME MOVIE</b></a> 😁.\nFor More Help Check 𝗛𝗲𝗹𝗽 Button Below. \n𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝖽 𝖡𝗒 <a href=https://t.me/TEAMRTM><b>[సజల]</b></a>''')
+    START_TXT = environ.get("START_TXT", '''<b>Hello {} 👋🏻, 𝖭𝗂𝖼𝖾 𝖳𝗈 𝖬𝖾𝖾𝗍 𝖸𝗈𝗎 🎊</b>\nI am Personal Movie/Series Provider Bot Of <a href=https://t.me/TEAMRTM><b>REALTIME MOVIE</b></a> 😁.\\nnFor More Help Check 𝗛𝗲𝗹𝗽 Button Below. \n\n𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝖽 𝖡𝗒 <a href=https://t.me/TEAMRTM><b>[సజల]</b></a>''')
                             
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝙼𝚈 𝙷𝙴𝙻𝙿 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
