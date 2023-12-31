@@ -437,7 +437,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('REALTIME MOVIE REQUEST', url='https://t.me/RealTimeMovieRequest'),
             InlineKeyboardButton('Join Premium', url='https://t.me/TEAMRTM/687')
         ], [
-            InlineKeyboardButton(⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://t.me/DulinkDroplink')
+            InlineKeyboardButton("⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://t.me/DulinkDroplink')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
