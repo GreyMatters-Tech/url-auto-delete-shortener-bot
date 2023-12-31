@@ -47,7 +47,6 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('REALTIME MOVIE UPDATES', url=f'https://t.me/TEAMRTM')
         ], [
-            InlineKeyboardButton('REALTIMEMOVIE REQUEST', url='https://t.me/RealTimeMovieRequest'),
             InlineKeyboardButton("⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://t.me/DulinkDroplink')
         ], [
             InlineKeyboardButton('♻️ HΞLᎮ ♻️', callback_data='help'),
@@ -93,7 +92,6 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('REALTIME MOVIE UPDATES', url=f'https://t.me/TEAMRTM')
         ], [
-            InlineKeyboardButton('REALTIMEMOVIE REQUEST', url='https://t.me/RealTimeMovieRequest'),
             InlineKeyboardButton("⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://t.me/DulinkDroplink')
         ], [
             InlineKeyboardButton('♻️ HΞLᎮ ♻️', callback_data='help'),
@@ -247,7 +245,7 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('Join Channel', url='https://t.me/TEAMRTM') ] ] ),
+        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('Backup Channel', url='https://t.me/TEAMRTM') ] ] ),
         protect_content=True if pre == 'filep' else False,
         )
                     
