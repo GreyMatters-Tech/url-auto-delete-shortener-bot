@@ -47,10 +47,10 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('REALTIME MOVIE UPDATES', url=f'https://t.me/TEAMRTM')
         ], [
-            InlineKeyboardButton('REALTIME MOVIE REQUEST', url='https://t.me/RealTimeMovieRequest'),
-            InlineKeyboardButton('Join Premium', url='https://t.me/TEAMRTM/687')
+            InlineKeyboardButton('REALTIMEMOVIE REQUEST', url='https://t.me/RealTimeMovieRequest'),
+            InlineKeyboardButton("⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://t.me/DulinkDroplink')
         ], [
-            InlineKeyboardButton("⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://t.me/DulinkDroplink'),
+            InlineKeyboardButton('♻️ HΞLᎮ ♻️', callback_data='help'),
             InlineKeyboardButton('♻️ ΛBOUT ♻️', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
