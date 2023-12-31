@@ -41,7 +41,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'RtmFileHub')
 
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002103774206'))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '-1001500033166')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TEAMRTM')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), False)
