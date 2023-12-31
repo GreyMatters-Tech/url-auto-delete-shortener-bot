@@ -406,7 +406,7 @@ async def get_shortlink(link):
         https = "https"
         link = link.replace("http", https)
     url = f'https://instantlinks.in/api'
-    params = {'api': URL_SHORTENER_WEBSITE_API,  # Corrected variable name
+    params = {'api': URL_SHORTNER_WEBSITE_API,  # Corrected variable name
               'url': link,
               }
 
@@ -418,8 +418,8 @@ async def get_shortlink(link):
                     return data['shortenedUrl']
                 else:
                     logger.error(f"Error: {data['message']}")
-                    return f'https://{URL_SHORTENER_WEBSITE}/api?api={URL_SHORTENER_WEBSITE_API}&url={link}'  # Corrected variable names
+                    return f'https://{URL_SHORTENER_WEBSITE}/api?api={URL_SHORTNER_WEBSITE_API}&url={link}'  # Corrected variable names
 
     except Exception as e:
         logger.error(e)
-        return f'https://{URL_SHORTENER_WEBSITE}/api?api={URL_SHORTENER_WEBSITE_API}&url={link}'  # Corrected variable names
+        return f'https://{URL_SHORTENER_WEBSITE}/api?api={URL_SHORTNER_WEBSITE_API}&url={link}'  # Corrected variable names
