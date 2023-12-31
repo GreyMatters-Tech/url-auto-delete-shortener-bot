@@ -55,7 +55,7 @@ async def save_group(bot, message):
                         pass
                 temp.MELCOW['welcome'] = await message.reply_video(
                 video="https://telegra.ph/file/03691465baa774e46506d.mp4",                                               
-                                                 caption=f'<b>ʜᴇʏ, {u.mention} 👋🏻\nwelcome to {message.chat.title}\n\nJust Write Movie Name(Year) & Get Movie/Series.\nFor More Help Check 𝗛𝗲𝗹𝗽 Button Below. \n\n𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝖽 𝖡𝗒 <a href=https://t.me/TEAMRTM><b>[సజల]</b></a>,
+                                                 caption=f'<b>ʜᴇʏ, {u.mention}! 👋🏻\nwelcome to {message.chat.title}\n\nJust Write Movie Name(Year) & Get Movie/Series.\nFor More Help Check 𝗛𝗲𝗹𝗽 Button Below. \n\n𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝖽 𝖡𝗒 <a href=https://t.me/TEAMRTM><b>[సజల]</b></a>',
                                                  reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('➡️ɢʀᴏᴜᴘ ʀᴜʟᴇs⬅️', url='https://t.me/c/2029895690/125') ] ] )
                 )
 
