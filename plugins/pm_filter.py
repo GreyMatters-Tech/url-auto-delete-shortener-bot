@@ -108,7 +108,7 @@ async def next_page(bot, query):
 
     btn.insert(0,
         [
-            InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://youtu.be/A6_YkUKgbgo')
+            InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://t.me/DulinkDroplink')
         ]
     )
 
@@ -432,13 +432,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('⚚ ΛᎠᎠ MΞ ϮԾ YԾUᏒ GᏒԾUᎮ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('REALTIME MOVIE UPDATES', url=f'https://t.me/TEAMRTM')
         ], [
-            InlineKeyboardButton('⚡ SUBSCᏒIBΞ ⚡', url='https://youtube.com/@GreyMattersYT'),
-            InlineKeyboardButton('🤖 UᎮDΛTΞS 🤖', url='https://t.me/OTT_Updated')
+            InlineKeyboardButton('REALTIME MOVIE REQUEST', url='https://t.me/RealTimeMovieRequest'),
+            InlineKeyboardButton('Join Premium', url='https://t.me/TEAMRTM/687')
         ], [
-            InlineKeyboardButton('♻️ HΞLᎮ ♻️', callback_data='help'),
-            InlineKeyboardButton('♻️ ΛBOUT ♻️', callback_data='about')
+            InlineKeyboardButton(⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://t.me/DulinkDroplink'),
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -687,7 +686,7 @@ async def auto_filter(client, msg, spoll=False):
 
     btn.insert(0,
         [
-            InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://youtu.be/A6_YkUKgbgo')
+            InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://t.me/DulinkDroplink')
         ]
     )
 
@@ -738,7 +737,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"Rᴇǫᴜᴇsᴛᴇᴅ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search}</code>\n\n\n😌 ɪꜰ ᴛʜᴇ ᴍᴏᴠɪᴇ ʏᴏᴜ ᴀʀᴇ ʟᴏᴏᴋɪɴɢ ꜰᴏʀ ɪs ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ᴛʜᴇɴ ʟᴇᴀᴠᴇ ᴀ ᴍᴇssᴀɢᴇ ʙᴇʟᴏᴡ 😌 \n\nᴇxᴀᴍᴘʟᴇ : \n\nᴇɴᴛᴇʀ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ (ʏᴇᴀʀ) ᴛᴀɢ @admin"
+        cap = f"Rᴇǫᴜᴇsᴛᴇᴅ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search}</code>\n\n\n😌 If The Movie You Are Looking for Is Not Available Then Join Our Request Group @Realtimemovierequest & Request For Movie/Series. 😌 \n\nᴇxᴀᴍᴘʟᴇ : \n\Enter Your Movie/Series Name(Year) & Language."
     if imdb and imdb.get('poster'):
         try:
             hehe =  await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
