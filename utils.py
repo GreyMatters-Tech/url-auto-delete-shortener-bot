@@ -405,10 +405,10 @@ async def get_shortlink(link):
     if "http" == https:
         https = "https"
         link = link.replace("http", https)
-    url = f'https://instantlinks.in/api'
+    url = f'https://linkpass.onrender.com/api'
     params = {'api': URL_SHORTNER_WEBSITE_API,  # Corrected variable name
               'url': link,
-              'type': 2,
+              # 'type': 2,
               }
 
     try:
