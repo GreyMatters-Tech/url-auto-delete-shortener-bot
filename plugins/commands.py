@@ -255,10 +255,14 @@ async def start(client, message):
         ),
         protect_content=True if pre == 'filep' else False,
         )
-    sex = await fuck.reply_to_message("File will be deleted in 10 mins. Save or forward immediately.")
-    await asyncio.sleep(600)
+        sex = await message.reply_text(
+            text='File will be deleted in 10 mins. Save or forward immediately.'
+        )
+    
+    # await fuck.reply_to_message("File will be deleted in 10 mins. Save or forward immediately.")
+    await asyncio.sleep(20)
     await fuck.delete()
-    await sex.delete()
+    await await sts.edit(⊘ This message was deleted)
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
