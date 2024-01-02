@@ -246,23 +246,21 @@ async def start(client, message):
         file_id=file_id,
         caption=f_caption,
         reply_markup=InlineKeyboardMarkup( 
-            [ 
-                [ 
+            [ [ 
                     InlineKeyboardButton('Search', url='https://t.me/realtimemoviepro'),
                     InlineKeyboardButton('Request', url='https://t.me/RealTimeMovieRequest') 
-                ] 
-            ] 
+                ] ] 
         ),
         protect_content=True if pre == 'filep' else False,
         )
     sex = await message.reply_text(
-        text='File will be deleted in 10 mins. Save or forward immediately.'
-    ),
+            text='File will be deleted in 10 mins. Save or forward immediately.'
+        )
     
     # await fuck.reply_to_message("File will be deleted in 10 mins. Save or forward immediately.")
     await asyncio.sleep(20)
     await fuck.delete()
-    await await sts.edit(⊘ This message was deleted)
+    await await sts.edit('⊘ This message was deleted')
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
