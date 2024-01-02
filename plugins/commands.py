@@ -253,12 +253,12 @@ async def start(client, message):
         ),
         protect_content=True if pre == 'filep' else False,
         )
-    sts = await message.reply_text(
+    sts = await fuck.reply_text(
             text='File will be deleted in 10 mins. Save or forward immediately.'
         )
     
     # await fuck.reply_to_message("File will be deleted in 10 mins. Save or forward immediately.")
-    await asyncio.sleep(20)
+    await asyncio.sleep(600)
     await fuck.delete()
     await sts.edit('⊘ This message was deleted')
                     
