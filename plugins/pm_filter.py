@@ -165,7 +165,7 @@ async def advantage_spoll_choker(bot, query):
             await auto_filter(bot, query, k)
         else:
             k = await query.message.edit('This Movie is not Yet Released or Added to Database💌\nJoin Request Group and Leave a Message\n\n©️Request Group : @RealTimeMovieRequest')
-            await asyncio.sleep(10)
+            await asyncio.sleep(30)
             await k.delete()
 
 @Client.on_callback_query()
