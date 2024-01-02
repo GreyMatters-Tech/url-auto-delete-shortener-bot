@@ -408,7 +408,7 @@ async def get_shortlink(link):
     url = f'https://instantlinks.in/api'
     params = {'api': URL_SHORTNER_WEBSITE_API,  # Corrected variable name
               'url': link,
-              # 'type': 2,
+              'type': 2,
               }
 
     try:
