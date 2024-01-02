@@ -248,8 +248,10 @@ async def start(client, message):
         # reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('Backup Channel', url='https://t.me/TEAMRTM') ] ] ),
         protect_content=True if pre == 'filep' else False,
         )
-    await asyncio.sleep(20)
+    sex = await fuck.reply("File will delete after 5 min")
+    await asyncio.sleep(300)
     await fuck.delete()
+    await sex.delete()
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
