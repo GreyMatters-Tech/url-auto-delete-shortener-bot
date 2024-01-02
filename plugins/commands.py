@@ -260,7 +260,7 @@ async def start(client, message):
     # await fuck.reply_to_message("File will be deleted in 10 mins. Save or forward immediately.")
     await asyncio.sleep(20)
     await fuck.delete()
-    await await sts.edit('⊘ This message was deleted')
+    await sts.edit('⊘ This message was deleted')
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
