@@ -245,7 +245,14 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        # reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('Backup Channel', url='https://t.me/TEAMRTM') ] ] ),
+        reply_markup=InlineKeyboardMarkup( 
+            [ 
+                [ 
+                    InlineKeyboardButton('Search', url='https://t.me/realtimemoviepro'),
+                    InlineKeyboardButton('Request', url='https://t.me/RealTimeMovieRequest') 
+                ] 
+            ] 
+        ),
         protect_content=True if pre == 'filep' else False,
         )
     reply = fuck.reply_to_messag
