@@ -380,10 +380,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
-                await query.answer(url=f"https://telegram.dog/{temp.U_NAME}?start={ident}_{file_id}")
+                # await query.answer(url=f"https://telegram.dog/{temp.U_NAME}?start={ident}_{file_id}")
+                t = await query.answer(
+                    url=f"https://telegram.dog/{temp.U_NAME}?start={ident}_{file_id}",
+                    text="Your message here"  # Replace with your desired text message
+                )
+                await asyncio.sleep(15)
+                await t.delete()
                 return
             elif settings['botpm']:
-                await query.answer(url=f"https://telegram.dog/{temp.U_NAME}?start={ident}_{file_id}")
+                # await query.answer(url=f"https://telegram.dog/{temp.U_NAME}?start={ident}_{file_id}")
+                t = await query.answer(
+                    url=f"https://telegram.dog/{temp.U_NAME}?start={ident}_{file_id}",
+                    text="Your message here"  # Replace with your desired text message
+                )
+                await asyncio.sleep(15)
+                await t.delete()
                 return
             else:
                 await client.send_cached_media(
