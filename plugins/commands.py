@@ -248,6 +248,7 @@ async def start(client, message):
         # reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('Backup Channel', url='https://t.me/TEAMRTM') ] ] ),
         protect_content=True if pre == 'filep' else False,
         )
+    reply = fuck.reply_to_messag
     sex = await fuck.reply("File will be deleted in 10 mins. Save or forward immediately.")
     await asyncio.sleep(600)
     await fuck.delete()
