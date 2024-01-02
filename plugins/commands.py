@@ -253,7 +253,7 @@ async def start(client, message):
         ),
         protect_content=True if pre == 'filep' else False,
         )
-    sex = await message.reply_text(
+    sts = await message.reply_text(
             text='File will be deleted in 10 mins. Save or forward immediately.'
         )
     
