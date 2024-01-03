@@ -253,9 +253,8 @@ async def start(client, message):
         ),
         protect_content=True if pre == 'filep' else False,
         )
-    sts = await fuck.reply_text(
-            text='File will be deleted in 10 mins. Save or forward immediately.'
-        )
+    reply = fuck.reply_to_message
+    sts = await fuck.reply('File will be deleted in 10 mins. Save or forward immediately.'c quote=True)
     
     # await fuck.reply_to_message("File will be deleted in 10 mins. Save or forward immediately.")
     await asyncio.sleep(600)
