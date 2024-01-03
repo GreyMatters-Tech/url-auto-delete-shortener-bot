@@ -53,7 +53,17 @@ async def save_group(bot, message):
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
-                temp.MELCOW['welcome'] = await message.reply_video(
+                # temp.MELCOW['welcome'] = await message.reply_video(
+                # video="https://telegra.ph/file/03691465baa774e46506d.mp4",                                               
+                #                                  caption=f'<b>ʜᴇʏ, {u.mention}! 👋🏻\nwelcome to {message.chat.title}\n\nJust Write Correct Movie/Series Name & Get Movie/Series. For More Help Check 𝗛𝗲𝗹𝗽 Button Below. \n\n𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝖽 𝖡𝗒 <a href=https://t.me/TEAMRTM><b>[సజల]</b></a>',
+                #                                  reply_markup= InlineKeyboardMarkup ([[
+                #                                                     InlineKeyboardButton("📥 How To Download 📥", url='https://t.me/DulinkDroplink')
+                #                                                 ], [
+                #                                                     InlineKeyboardButton('REALTIME MOVIE UPDATES', url=f'https://t.me/TEAMRTM')
+                #                                                 ]] )
+                # )
+
+                welcome_message = await message.reply_video(
                 video="https://telegra.ph/file/03691465baa774e46506d.mp4",                                               
                                                  caption=f'<b>ʜᴇʏ, {u.mention}! 👋🏻\nwelcome to {message.chat.title}\n\nJust Write Correct Movie/Series Name & Get Movie/Series. For More Help Check 𝗛𝗲𝗹𝗽 Button Below. \n\n𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝖽 𝖡𝗒 <a href=https://t.me/TEAMRTM><b>[సజల]</b></a>',
                                                  reply_markup= InlineKeyboardMarkup ([[
@@ -62,6 +72,11 @@ async def save_group(bot, message):
                                                                     InlineKeyboardButton('REALTIME MOVIE UPDATES', url=f'https://t.me/TEAMRTM')
                                                                 ]] )
                 )
+
+                temp.MELCOW['welcome'] = welcome_message
+                await asyncio.sleep(600)
+                await welcome_message.delete();
+                
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
