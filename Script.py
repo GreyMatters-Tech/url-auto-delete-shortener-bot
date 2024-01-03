@@ -16,13 +16,13 @@ class script(object):
                             
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝙼𝚈 𝙷𝙴𝙻𝙿 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
-    ABOUT_TXT = """<b><i>🤖 ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/TEAMRTM><b>RealTimeMovie</b></a>\n
+    ABOUT_TXT = """<b>🤖 ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/TEAMRTM><b>RealTimeMovie</b></a>\n
 👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ : సజల\n
 📝 ʟᴀɴɢᴜᴀɢᴇ : ᴘʏʀᴏɢʀᴀᴍ\n
 📚 ꜰʀᴀᴍᴇᴡᴏʀᴋ : ᴘʏᴛʜᴏɴ 3\n
 📡 ʜᴏsᴛᴇᴅ ᴏɴ : Heroku\n
 📢 ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/TEAMRTM><b></b>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>\n
-🌟 ᴠᴇʀsɪᴏɴ : ᴠ 4.0\n</b></i>"""
+🌟 ᴠᴇʀsɪᴏɴ : ᴠ 4.0\n</b>"""
     SOURCE_TXT = """<b>𝐂𝐫𝐞𝐚𝐭𝐞 𝐎𝐧𝐞 𝐋𝐢𝐤𝐞 𝐓𝐡𝐢𝐬:</b>
 » I will Create One Bot For You<b>
 » Contact Me <b>"""
