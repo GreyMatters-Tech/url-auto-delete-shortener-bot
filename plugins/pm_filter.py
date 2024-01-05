@@ -782,16 +782,15 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
+        sex = [
+                [
+                    InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
+                ], [
+                    InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
+                ]
+             ]
         k = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
-                            reply_markup=InlineKeyboardMarkup(
-                                sex = [
-                                        [
-                                            InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
-                                        ], [
-                                            InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
-                                        ]
-                                    ]
-                            ))
+                            reply_markup=InlineKeyboardMarkup(sex))
         await asyncio.sleep(300)
         await k.delete()
         return
@@ -820,16 +819,15 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
+        sex = [
+            [
+                InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
+            ], [
+                InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
+            ]
+        ]
         k = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
-                            reply_markup=InlineKeyboardMarkup(
-                                sex = [
-                                        [
-                                            InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
-                                        ], [
-                                            InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
-                                        ]
-                                    ]
-                            ))
+                            reply_markup=InlineKeyboardMarkup(sex))
         await asyncio.sleep(300)
         await k.delete()
         return
