@@ -777,7 +777,15 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
+        btn = [
+            [
+                InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
+            ], [
+                InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
+            ]
+        ]
+        k = await msg.reply("I couldn't find any movie in that name.",
+                        reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -818,11 +826,6 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    tt = await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
-                    reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(15)
-    await tt.delete()
-     
     tt = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
                         reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(15)
