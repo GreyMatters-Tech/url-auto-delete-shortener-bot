@@ -105,9 +105,7 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
-
-    # Add the messages to the button list
-    btn.extend(messages)
+        
 
     btn.insert(0,
         [
