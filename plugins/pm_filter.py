@@ -82,9 +82,9 @@ async def next_page(bot, query):
         return
     settings = await get_settings(query.message.chat.id)
     if settings['button']:
-        messages  = [
+        btn  = [
             [
-                types.MessageEntityText(
+                InlineKeyboardButtont(
                     text=f"[{get_size(file.file_size)}] {file.file_name}", 
                     url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
@@ -92,13 +92,13 @@ async def next_page(bot, query):
             for file in files
         ]
     else:
-        messages  = [
+        btn  = [
             [
-                types.MessageEntityText(
+                InlineKeyboardButton(
                     text=f"[{get_size(file.file_size)}] {file.file_name}", 
                     url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
-                types.MessageEntityText(
+                InlineKeyboardButton(
                     text=f"[{get_size(file.file_size)}] {file.file_name}", 
                     url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
