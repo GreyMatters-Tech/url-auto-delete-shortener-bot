@@ -791,7 +791,7 @@ async def advantage_spell_chok(msg):
                                             InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
                                         ]
                                     ]
-                            )
+                            ))
         await asyncio.sleep(300)
         await k.delete()
         return
@@ -829,7 +829,7 @@ async def advantage_spell_chok(msg):
                                             InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
                                         ]
                                     ]
-                            )
+                            ))
         await asyncio.sleep(300)
         await k.delete()
         return
