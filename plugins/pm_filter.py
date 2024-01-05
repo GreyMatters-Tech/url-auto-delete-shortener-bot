@@ -787,17 +787,6 @@ async def advantage_spell_chok(msg):
                 movielist += [movie.get('title') for movie in imdb_s]
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
-
-    btn = [[
-        InlineKeyboardButton(
-            [[
-                InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
-            ], [
-                InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
-            ]]
-        )
-    ]] 
-
     if not movielist:
         k = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
                     reply_markup=InlineKeyboardMarkup(btn))
