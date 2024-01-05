@@ -164,16 +164,15 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
+            sex = [
+                    [
+                        InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
+                    ], [
+                        InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
+                    ]
+            ]
             k = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
-                            reply_markup=InlineKeyboardMarkup(
-                                sex = [
-                                        [
-                                            InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
-                                        ], [
-                                            InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
-                                        ]
-                                    ]
-                            )
+                            reply_markup=InlineKeyboardMarkup(sex))
         await asyncio.sleep(300)
         await k.delete()
         return
