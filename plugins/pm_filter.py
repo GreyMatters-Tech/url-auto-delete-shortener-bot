@@ -769,19 +769,22 @@ async def auto_filter(client, msg, spoll=False):
             await fuk.delete()
 
 async def advantage_spell_chok(msg):
-   
-     btn = [[
-        InlineKeyboardButton(
-            [[
-                InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
-            ], [
-                InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
-            ]]
-        )
-    ]]
+     btn = [
+        [
+            InlineKeyboardButton(
+                "🔍Check Your Spelling", 
+                url=f'https://google.com/search?q={msg.text} movie'
+            )
+        ], 
+        [
+            InlineKeyboardButton(
+                '🗓 Check Release Data', 
+                url=f'https://google.com/search?q={msg.text} release date'
+            )
+        ]
+    ]
     tt = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
-                    reply_markup=InlineKeyboardMarkup(btn))
-    return
+                        reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(15)
     await tt.delete()
 
