@@ -82,7 +82,7 @@ async def next_page(bot, query):
         return
     settings = await get_settings(query.message.chat.id)
     if settings['button']:
-        btn = [
+        messages  = [
             [
                 types.MessageEntityText(
                     text=f"[{get_size(file.file_size)}] {file.file_name}", 
@@ -92,7 +92,7 @@ async def next_page(bot, query):
             for file in files
         ]
     else:
-        btn = [
+        messages  = [
             [
                 types.MessageEntityText(
                     text=f"[{get_size(file.file_size)}] {file.file_name}", 
@@ -105,6 +105,9 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
+
+    # Add the messages to the button list
+    btn.extend(messages)
 
     btn.insert(0,
         [
