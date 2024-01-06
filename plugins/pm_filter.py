@@ -652,16 +652,13 @@ async def auto_filter(client, msg, spoll=False):
                 if settings["spell_check"]:
                     return await advantage_spell_chok(msg)
                 else:
-                    search_encoded = quote(search)
-                    url_spelling = f'https://google.com/search?q={search_encoded} movie'
-                    url_release_date = f'https://google.com/search?q={search_encoded} release date'
                     tt = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
                                                 reply_markup=InlineKeyboardMarkup(
                                                         [
                                                             [
-                                                                InlineKeyboardButton("🔍Check Your Spelling", url=url_spelling)
+                                                                InlineKeyboardButton("🔍Check Your Spelling", url=url="https://google.com/search?q={}".format(search) + " movie")
                                                             ],[
-                                                                InlineKeyboardButton('🗓 Check Release Data', url=url_release_date)
+                                                                InlineKeyboardButton('🗓 Check Release Data', url=url="https://google.com/search?q={}".format(search) + " release date")
                                                             ]
                                                         ]
                                                     )
