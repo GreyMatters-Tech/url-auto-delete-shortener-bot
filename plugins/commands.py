@@ -138,21 +138,45 @@ async def start(client, message):
             if f_caption is None:
                 f_caption = f"{title}"
             try:
-                await client.send_cached_media(
+                fuck = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    protect_content=msg.get('protect', False),
-                    )
+                    reply_markup=InlineKeyboardMarkup( 
+                            [ [ 
+                                    InlineKeyboardButton('Search', url='https://t.me/realtimemoviepro'),
+                                    InlineKeyboardButton('Request', url='https://t.me/RealTimeMovieRequest') 
+                                ] ] 
+                        ),
+                        protect_content=True if pre == 'filep' else False,
+                        )
+                reply = fuck.reply_to_message
+                sts = await fuck.reply('File will be deleted in 10 mins. Save or forward immediately.', quote=True)
+                await asyncio.sleep(600)
+                await fuck.delete()
+                await sts.edit('⊘ This message was deleted')
+                
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
-                await client.send_cached_media(
+                fuck = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    protect_content=msg.get('protect', False),
-                    )
+                    reply_markup=InlineKeyboardMarkup( 
+                            [ [ 
+                                    InlineKeyboardButton('Search', url='https://t.me/realtimemoviepro'),
+                                    InlineKeyboardButton('Request', url='https://t.me/RealTimeMovieRequest') 
+                                ] ] 
+                        ),
+                        protect_content=True if pre == 'filep' else False,
+                        )
+                reply = fuck.reply_to_message
+                sts = await fuck.reply('File will be deleted in 10 mins. Save or forward immediately.', quote=True)
+                await asyncio.sleep(600)
+                await fuck.delete()
+                await sts.edit('⊘ This message was deleted')
+                
             except Exception as e:
                 logger.warning(e, exc_info=True)
                 continue
