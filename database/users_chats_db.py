@@ -112,7 +112,8 @@ class Database:
             'botpm': P_TTI_SHOW_OFF,
             'file_secure': PROTECT_CONTENT,
             'imdb': IMDB,
-            'spell_check': SPELL_CHECK_REPLY,
+            # 'spell_check': SPELL_CHECK_REPLY,
+            'spell_check': False,
             'welcome': MELCOW_NEW_USERS,
             'template': IMDB_TEMPLATE
         }
