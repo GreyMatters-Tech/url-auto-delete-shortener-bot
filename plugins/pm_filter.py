@@ -164,8 +164,19 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('This Movie is not Yet Released or Added to Database💌\nJoin Request Group and Leave a Message\n\n©️Request Group : @RealTimeMovieRequest')
-            await asyncio.sleep(30)
+            btn = [[
+                    InlineKeyboardButton(
+                        [[
+                            InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
+                        ], [
+                            InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
+                        ]]
+                    )
+                ]]
+            k = await query.message.edit('"I couldn't find a movie in my database. Please check the spelling or the release date and try again.", 
+                        reply_markup=InlineKeyboardMarkup(btn))
+            )
+            await asyncio.sleep(300)
             await k.delete()
 
 @Client.on_callback_query()
@@ -737,7 +748,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"Rᴇǫᴜᴇsᴛᴇᴅ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ : <code>{search}</code>\n\n\n😌 If The Movie You Are Looking for Is Not Available Then Join Our Request Group @Realtimemovierequest & Request For Movie/Series. 😌 \n\nᴇxᴀᴍᴘʟᴇ : \n\Enter Your Movie/Series Name(Year) & Language."
+        cap = f"Here is what i found for your query {search}"
     if imdb and imdb.get('poster'):
         try:
             hehe =  await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -810,12 +821,15 @@ async def advantage_spell_chok(msg):
     SPELL_CHECK[msg.id] = movielist
     btn = [[
         InlineKeyboardButton(
-            text=movie.strip(),
-            callback_data=f"spolling#{user}#{k}",
+            [[
+                InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={search} movie')
+            ], [
+                InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={search} release date')
+            ]]
         )
-    ] for k, movie in enumerate(movielist)]
-    btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    tt = await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
+    ]]
+    # btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
+    tt = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(15)
     await tt.delete()
