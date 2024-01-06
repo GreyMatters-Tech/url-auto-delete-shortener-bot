@@ -656,9 +656,9 @@ async def auto_filter(client, msg, spoll=False):
                                                 reply_markup=InlineKeyboardMarkup(
                                                         [
                                                             [
-                                                                InlineKeyboardButton("🔍Check Your Spelling", url=url="https://google.com/search?q={}".format(search) + " movie")
+                                                                InlineKeyboardButton("🔍Check Your Spelling", url="https://google.com/search?q={}".format(search) + " movie")
                                                             ],[
-                                                                InlineKeyboardButton('🗓 Check Release Data', url=url="https://google.com/search?q={}".format(search) + " release date")
+                                                                InlineKeyboardButton('🗓 Check Release Data', url="https://google.com/search?q={}".format(search) + " release date")
                                                             ]
                                                         ]
                                                     )
