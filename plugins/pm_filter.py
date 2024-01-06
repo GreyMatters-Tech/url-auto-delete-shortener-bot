@@ -9,6 +9,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import *
+from urllib.parse import quote
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -651,17 +652,19 @@ async def auto_filter(client, msg, spoll=False):
                 if settings["spell_check"]:
                     return await advantage_spell_chok(msg)
                 else:
-                    tt = await msg.reply(
-                        "I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
-                        reply_markup=InlineKeyboardMarkup(
-                                [
-                                    [
-                                        InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={search} movie')
-                                    ],[
-                                        InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={search} release date')
-                                    ]
-                                ]
-                            )
+                    search_encoded = quote(search)
+                    url_spelling = f'https://google.com/search?q={search_encoded} movie'
+                    url_release_date = f'https://google.com/search?q={search_encoded} release date'
+                    tt = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
+                                                reply_markup=InlineKeyboardMarkup(
+                                                        [
+                                                            [
+                                                                InlineKeyboardButton("🔍Check Your Spelling", url=url_spelling)
+                                                            ],[
+                                                                InlineKeyboardButton('🗓 Check Release Data', url=url_release_date)
+                                                            ]
+                                                        ]
+                                                    )
                         )
                     
                     await asyncio.sleep(180)
