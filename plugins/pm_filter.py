@@ -394,12 +394,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer(url=f"https://telegram.dog/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             else:
-                await client.send_cached_media(
+                fuck = await client.send_cached_media(
                     chat_id=query.from_user.id,
                     file_id=file_id,
                     caption=f_caption,
                     protect_content=True if ident == "filep" else False 
-                )
+                reply_markup=InlineKeyboardMarkup( 
+                        [ [ 
+                                InlineKeyboardButton('Search', url='https://t.me/realtimemoviepro'),
+                                InlineKeyboardButton('Request', url='https://t.me/RealTimeMovieRequest') 
+                            ] ] 
+                    ),
+                    )
+                reply = fuck.reply_to_message
+                sts = await fuck.reply('File will be deleted in 10 mins. Save or forward immediately.', quote=True)
+                
+                await asyncio.sleep(600)
+                await fuck.delete()
+                await sts.edit('⊘ This message was deleted')
+             
                 await query.answer('Check PM, I have sent files in pm', show_alert=True)
         except UserIsBlocked:
             await query.answer('You Are Blocked to use me !', show_alert=True)
@@ -657,8 +670,30 @@ async def auto_filter(client, msg, spoll=False):
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
                 if settings["spell_check"]:
-                    return await advantage_spell_chok(msg)
+                    # return await advantage_spell_chok(msg)
+                     sex = [
+                                [
+                                    InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
+                                ], [
+                                    InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
+                                ]
+                        ]
+                        k = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
+                                        reply_markup=InlineKeyboardMarkup(sex))
+                    await asyncio.sleep(300)
+                    await k.delete()
                 else:
+                    sex = [
+                                [
+                                    InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
+                                ], [
+                                    InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
+                                ]
+                        ]
+                        k = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
+                                        reply_markup=InlineKeyboardMarkup(sex))
+                    await asyncio.sleep(300)
+                    await k.delete()
                     return
         else:
             return
