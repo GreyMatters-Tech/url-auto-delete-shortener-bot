@@ -827,8 +827,8 @@ async def advantage_spell_chok(msg):
         )
     ]]
     tt = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
-                    reply_markup=InlineKeyboardMarkup(lac))
-    await asyncio.sleep(15)
+                    reply_markup=InlineKeyboardMarkup(lak))
+    await asyncio.sleep(180)
     await tt.delete()
 
 
