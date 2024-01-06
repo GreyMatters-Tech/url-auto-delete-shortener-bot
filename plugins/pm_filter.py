@@ -775,8 +775,16 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
-        await asyncio.sleep(8)
+        k = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
+                    reply_markup=InlineKeyboardMarkup(
+                            [
+                                InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
+                            ], [
+                                InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
+                            ]
+                    )
+                )
+        await asyncio.sleep(180)
         await k.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
@@ -804,30 +812,38 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("I couldn't find anything related to that. Check your spelling")
-        await asyncio.sleep(8)
+        k = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
+                    reply_markup=InlineKeyboardMarkup(
+                            [
+                                InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msg.text} movie')
+                            ], [
+                                InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg.text} release date')
+                            ]
+                    )
+                )
+        await asyncio.sleep(180)
         await k.delete()
         return
     SPELL_CHECK[msg.id] = movielist
-    btn = [[
-        InlineKeyboardButton(
-            text=movie.strip(),
-            callback_data=f"spolling#{user}#{k}",
-        )
-    ] for k, movie in enumerate(movielist)]
-    btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
+    # btn = [[
+    #     InlineKeyboardButton(
+    #         text=movie.strip(),
+    #         callback_data=f"spolling#{user}#{k}",
+    #     )
+    # ] for k, movie in enumerate(movielist)]
+    # btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
 
-    lak = [[
+    btn = [
         InlineKeyboardButton(
-            [[
+            [
                 InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={search} movie')
             ], [
                 InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={search} release date')
-            ]]
+            ]
         )
-    ]]
+    ]
     tt = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
-                    reply_markup=InlineKeyboardMarkup(lak))
+                    reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(180)
     await tt.delete()
 
