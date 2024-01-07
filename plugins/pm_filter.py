@@ -56,7 +56,7 @@ async def fil_mod(client, message):
 async def give_filter(client, message):
     k = await manual_filters(client, message)
     if k == False:
-        await auto_filter(client, message)
+        await auto_filter(client, message, k)
 
 
 @Client.on_callback_query(filters.regex(r"^next"))
@@ -165,8 +165,19 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('This Movie is not Yet Released or Added to Database💌\nJoin Request Group and Leave a Message\n\n©️Request Group : @RealTimeMovieRequest')
-            await asyncio.sleep(30)
+            k = await query.message.edit("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
+                        reply_markup=InlineKeyboardMarkup(
+                                [
+                                    [
+                                        InlineKeyboardButton("🔍Check Your Spelling", url=f"https://google.com/search?q={quote(search)}%20movie")
+                                    ],
+                                    [
+                                        InlineKeyboardButton("🗓 Check Release Data", url=f"https://google.com/search?q={quote(search)}%20release%20date")
+                                    ]
+                                ]
+                            )
+                        )       
+            await asyncio.sleep(180)
             await k.delete()
 
 @Client.on_callback_query()
@@ -653,17 +664,17 @@ async def auto_filter(client, msg, spoll=False):
                     return await advantage_spell_chok(msg)
                 else:
                     tt = await msg.reply("I couldn't find a movie in my database. Please check the spelling or the release date and try again.",
-                                                reply_markup=InlineKeyboardMarkup(
-                                                        [
-                                                            [
-                                                                InlineKeyboardButton("🔍Check Your Spelling", url=f'https://google.com/search?q={msga}%20movie')
-                                                            ],[
-                                                                InlineKeyboardButton('🗓 Check Release Data', url=f'https://google.com/search?q={msg}%20release%20date')
-                                                            ]
-                                                        ]
-                                                    )
-                        )
-                    
+                                        reply_markup=InlineKeyboardMarkup(
+                                            [
+                                                [
+                                                    InlineKeyboardButton("🔍Check Your Spelling", url=f"https://google.com/search?q={quote(search)}%20movie")
+                                                ],
+                                                [
+                                                    InlineKeyboardButton("🗓 Check Release Data", url=f"https://google.com/search?q={quote(search)}%20release%20date")
+                                                ]
+                                            ]
+                                        )
+                                    )
                     await asyncio.sleep(180)
                     await tt.delete()
                     return
