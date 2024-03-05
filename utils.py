@@ -428,7 +428,7 @@ def humanbytes(size):
 async def get_shortlink(link):
 
     try:
-        return link
+        return {link}
 
     except Exception as e:
         logger.error(e)
